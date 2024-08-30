@@ -1,13 +1,19 @@
 /* Avatar imgs from https://www.freepik.com */
 
 body {
+    font-family: Roboto;
+    line-height: 1.5;
     height: 100vh;
     display: grid;
     grid: "sidebar header" 1fr
-          "sidebar main" 4fr / 1fr 4fr;
+          "sidebar main" 5fr / 300px 1fr;
 }
 
 .sidebar {
+    z-index: 1;
+    position: fixed;
+    height: 100vh;
+    width: 300px;
     grid-area: sidebar;
     background-color: #64748b;
 }
@@ -36,18 +42,221 @@ body {
 }
 
 header {
+    z-index: 0;
+    padding: 16px 64px 8px 64px;
     grid-area: header;
+    box-shadow: 0 0 16px #AAA;
+    display: grid;
+    gap: 24px;
+    grid-template-rows: 1fr 2fr;
+}
+
+header * {
+    display: flex;
+    align-items: center;
+}
+
+header nav, .header {
+    justify-content: space-between;
+}
+
+.search input {
+    padding: 4px 1ch;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #e2e8f0;
+    width: 48ch;
+}
+
+.search input:focus {
+    border: 2px solid #64748b;
+    outline: none;
+}
+
+.profile {
+    display: flex;
+    gap: 24px;
+}
+
+.profile a {
+    gap: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.left {
+    display: flex;
+    gap: 16px;
+}
+
+.headerAvatar {
+    width: 5rem;
+    height: 5rem;
+}
+
+.right {
+    display: flex;
+    gap: 32px;
+}
+
+.right button {
+    border: none;
+    background-color: #94a3b8;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 32px;
+    border-radius: 32px;
+}
+
+.right button:hover {
+    background-color: #64748b;
+}
+
+.welcome {
+    display: block;
+}
+
+.welcome h1:first-child {
+    font-size: 1rem;
 }
 
 main {
+    padding: 32px;
+    z-index: -1;
     grid-area: main;
+    background-color: #f1f5f9;
+    display: grid;
+    gap: 32px;
+    grid: "projects announcements"
+          "projects trending" / 3fr 1fr;
+}
+
+main h1 {
+    font-size: 1.2rem;
+    font-weight:500;
+}
+
+.actions {
+    text-align: end;
+}
+
+.actions * {
+    margin: 0 8px;
+}
+
+.projectsContainer {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.projects {
+    grid-area: projects;
+}
+
+main h1 {
+    margin-bottom: 12px;
+}
+
+.project, .announcementsContainer, .trendingContainer {
+    border-radius: 16px;
+    background-color: #FFF;
+    box-shadow: 2px 6px 8px #DDD;
+}
+
+.announcementsContainer, .trendingContainer {
+    padding: 32px;
+}
+
+.announcementsContainer .wrapper {
+    background-color: #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.announcement {
+    padding: 16px 8px;
+}
+
+.announcementsContainer .wrapper * {
+    background-color: #FFF;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 12px 1fr;
+}
+
+.project .wrapper {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrapper .content {
+    margin-bottom: 16px;
+}
+
+.vertLine {
+    background-color: #0284c7;
+    border-radius: 16px 0 0 16px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.trend {
+    display: flex;
+    line-height: 1.2;
+    align-items: center;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.trendingContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trend p.handle {
+    font-weight: 500;
+}
+
+.trend img {
+    margin-right: 16px;
 }
 
 .sidebar a.communities {
     margin-bottom: 80px;
 }
 
-svg, img {
+svg {
     width: 1.5em;
     margin-right: 16px;
+}
+
+img {
+    width: 3rem;
+    height: 3rem;
 }
