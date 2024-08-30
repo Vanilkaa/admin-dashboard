@@ -1,1 +1,53 @@
 /* Avatar imgs from https://www.freepik.com */
+
+body {
+    height: 100vh;
+    display: grid;
+    grid: "sidebar header" 1fr
+          "sidebar main" 4fr / 1fr 4fr;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #64748b;
+}
+
+.sidebar a {
+    font-family: Roboto;
+    font-weight: bold;
+    color: #f8fafc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 32px;
+    margin-left: 40px;
+}
+
+.sidebar nav svg {
+    margin-right: 24px;
+}
+
+.dashboard a {
+    font-size: 2rem;
+    margin-right: 16px;
+    margin-left: 30px;
+    margin-bottom: 48px;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+.sidebar a.communities {
+    margin-bottom: 80px;
+}
+
+svg, img {
+    width: 1.5em;
+    margin-right: 16px;
+}
