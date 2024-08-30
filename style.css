@@ -26,18 +26,18 @@ body {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    margin: 32px;
-    margin-left: 40px;
+    margin: 16px;
+    margin-left: 24px;
 }
 
 .sidebar nav svg {
-    margin-right: 24px;
+    margin-right: 28px;
 }
 
 .dashboard a {
     font-size: 2rem;
     margin-right: 16px;
-    margin-left: 30px;
+    margin-left: 16px;
     margin-bottom: 48px;
 }
 
